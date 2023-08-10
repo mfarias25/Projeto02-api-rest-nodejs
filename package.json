@@ -4,21 +4,34 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx --watch src/server.ts",
-    "lint": "eslint src -e .ts"
+    "dev": "tsx watch src/server.ts",
+    "knex": "node --no-warnings --loader tsx ./node_modules/knex/bin/cli.js",
+    "lint": "eslint src --ext .ts --fix",
+    "build": "tsup src --out-dir build",
+    "test": "vitest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@rocketseat/eslint-config": "^1.2.0",
+    "@types/jest": "^29.5.3",
     "@types/node": "^20.3.2",
+    "@types/supertest": "^2.0.12",
     "eslint": "^8.43.0",
+    "supertest": "^6.3.3",
+    "tsup": "^7.2.0",
     "tsx": "^3.12.7",
-    "typescript": "^5.1.6"
-    
+    "typescript": "^5.1.6",
+    "vitest": "^0.34.1"
   },
   "dependencies": {
-    "fastify": "^4.19.0"
+    "@fastify/cookie": "^9.0.4",
+    "dotenv": "^16.0.3",
+    "fastify": "^4.19.0",
+    "knex": "^2.4.2",
+    "npm": "^9.8.0",
+    "sqlite3": "^5.1.6",
+    "zod": "^3.20.2"
   }
 }
